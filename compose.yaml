@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+    restart: unless-stopped
+    volumes:
+      - usage-logs:/app/usage_logs
+    logging:
+      options:
+        max-size: 4m
+        max-file: "3"
+    develop:
+      watch:
+        - action: rebuild
+          path: .
+
+volumes:
+  usage-logs:
