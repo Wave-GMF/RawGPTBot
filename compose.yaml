@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     volumes:
       - usage-logs:/app/usage_logs
+    env_file:
+      - .env
     logging:
       options:
         max-size: 4m
