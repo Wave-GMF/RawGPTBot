@@ -7,13 +7,9 @@
     "stats_description": "Get your current usage statistics",
     "resend_description": "Resend the latest message",
     "chat_description": "Chat with the bot!",
-    "disallowed": "Sorry, you are not allowed to use this bot. You can check out the source code at https://github.com/n3d1117/chatgpt-telegram-bot",
+    "disallowed": "Sorry, you are not allowed to use this bot.",
     "budget_limit": "Sorry, you have reached your usage limit.",
-    "help_text": [
-      "I'm a ChatGPT bot, talk to me!",
-      "Send me a voice message or file and I'll transcribe it for you",
-      "Open source at https://github.com/n3d1117/chatgpt-telegram-bot"
-    ],
+    "help_text": "I can assist with formatting Chinese bank details. Please provide the complete information you'd like me to format.",
     "stats_conversation": [
       "Current conversation",
       "chat messages in history",
@@ -72,7 +68,7 @@
     "chat_description": "Общайся с ботом!",
     "disallowed": "Извини, тебе запрещено использовать этого бота.",
     "budget_limit": "Извини, ты достиг предела использования",
-    "help_text": "Я бот ChatGPT, поговори со мной!",
+    "help_text": "Я могу помочь с форматированием банковских реквизитов на китайском языке. Пожалуйста, предоставьте полную информацию, которую вы хотели бы, чтобы я отформатировал.",
     "stats_conversation": [
       "Текущий разговор",
       "сообщения в истории",

@@ -64,14 +64,8 @@ class ChatGPTTelegramBot:
         """
         Shows the help menu.
         """
-        commands = self.group_commands if is_group_chat(update) else self.commands
-        commands_description = [f'/{command.command} - {command.description}' for command in commands]
         bot_language = self.config['bot_language']
-        help_text = (
-                localized_text('help_text', bot_language) +
-                '\n\n' +
-                '\n'.join(commands_description)
-        )
+        help_text = localized_text('help_text', bot_language)
         await update.message.reply_text(help_text, disable_web_page_preview=True)
 
     async def stats(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
