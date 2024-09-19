@@ -1,20 +1,22 @@
 # ChatGPT Telegram Bot
-![python-version](https://img.shields.io/badge/python-3.9-blue.svg)
-[![openai-version](https://img.shields.io/badge/openai-0.27.8-orange.svg)](https://openai.com/)
-[![license](https://img.shields.io/badge/License-GPL%202.0-brightgreen.svg)](LICENSE)
-[![Publish Docker image](https://github.com/n3d1117/chatgpt-telegram-bot/actions/workflows/publish.yaml/badge.svg)](https://github.com/n3d1117/chatgpt-telegram-bot/actions/workflows/publish.yaml)
 
-A [Telegram bot](https://core.telegram.org/bots/api) that integrates with OpenAI's _official_ [ChatGPT](https://openai.com/blog/chatgpt/), [DALL·E](https://openai.com/product/dall-e-2) and [Whisper](https://openai.com/research/whisper) APIs to provide answers. Ready to use with minimal configuration required.
+A [Telegram bot](https://core.telegram.org/bots/api) that integrates with OpenAI's
+_official_ [ChatGPT](https://openai.com/blog/chatgpt/), [DALL·E](https://openai.com/product/dall-e-2)
+and [Whisper](https://openai.com/research/whisper) APIs to provide answers. Ready to use with minimal configuration
+required.
 
 ## Screenshots
 
 ### Demo
+
 ![demo](https://user-images.githubusercontent.com/11541888/225114786-0d639854-b3e1-4214-b49a-e51ce8c40387.png)
 
 ### Plugins
+
 ![plugins](https://github.com/n3d1117/chatgpt-telegram-bot/assets/11541888/83d5e0cd-e09a-463d-a292-722f919e929f)
 
 ## Features
+
 - [x] Support markdown in answers
 - [x] Reset conversation with the `/reset` command
 - [x] Typing indicator while generating a response
@@ -28,35 +30,42 @@ A [Telegram bot](https://core.telegram.org/bots/api) that integrates with OpenAI
 - [x] User budgets and guest budgets - by [@AlexHTW](https://github.com/AlexHTW)
 - [x] Stream support
 - [x] GPT-4 support
-  - If you have access to the GPT-4 API, simply change the `OPENAI_MODEL` parameter to `gpt-4`
+    - If you have access to the GPT-4 API, simply change the `OPENAI_MODEL` parameter to `gpt-4`
 - [x] Localized bot language
-  - Available languages :brazil: :cn: :finland: :de: :indonesia: :iran: :it: :malaysia: :netherlands: :poland: :ru: :saudi_arabia: :es: :taiwan: :tr: :ukraine: :gb: :uzbekistan: :vietnam: :israel:
+    - Available languages :brazil: :cn: :finland: :de: :indonesia: :iran: :it: :malaysia: :netherlands: :poland: :ru: :
+      saudi_arabia: :es: :taiwan: :tr: :ukraine: :gb: :uzbekistan: :vietnam: :israel:
 - [x] Improved inline queries support for group and private chats - by [@bugfloyd](https://github.com/bugfloyd)
-  - To use this feature, enable inline queries for your bot in BotFather via the `/setinline` [command](https://core.telegram.org/bots/inline)
+    - To use this feature, enable inline queries for your bot in BotFather via the
+      `/setinline` [command](https://core.telegram.org/bots/inline)
 - [x] Support *new models* [announced on June 13, 2023](https://openai.com/blog/function-calling-and-other-api-updates)
 - [x] Support *functions* (plugins) to extend the bot's functionality with 3rd party services
-  - Weather, Spotify, Web search, text-to-speech and more. See [here](#available-plugins) for a list of available plugins
+    - Weather, Spotify, Web search, text-to-speech and more. See [here](#available-plugins) for a list of available
+      plugins
 - [x] Support unofficial OpenAI-compatible APIs - by [@kristaller486](https://github.com/kristaller486)
-- [x] (NEW!) Support GPT-4 Turbo and DALL·E 3 [announced on November 6, 2023](https://openai.com/blog/new-models-and-developer-products-announced-at-devday) - by [@AlexHTW](https://github.com/AlexHTW)
-- [x] (NEW!) Text-to-speech support [announced on November 6, 2023](https://platform.openai.com/docs/guides/text-to-speech) - by [@gilcu3](https://github.com/gilcu3)
-- [x] (NEW!) Vision support [announced on November 6, 2023](https://platform.openai.com/docs/guides/vision) - by [@gilcu3](https://github.com/gilcu3)
-- [x] (NEW!) GPT-4o model support [announced on May 12, 2024](https://openai.com/index/hello-gpt-4o/) - by [@err09r](https://github.com/err09r)
-
-## Additional features - help needed!
-If you'd like to help, check out the [issues](https://github.com/n3d1117/chatgpt-telegram-bot/issues) section and contribute!  
-If you want to help with translations, check out the [Translations Manual](https://github.com/n3d1117/chatgpt-telegram-bot/discussions/219)
-
-PRs are always welcome!
+- [x] (NEW!) Support GPT-4 Turbo and DALL·E
+  3 [announced on November 6, 2023](https://openai.com/blog/new-models-and-developer-products-announced-at-devday) -
+  by [@AlexHTW](https://github.com/AlexHTW)
+- [x] (NEW!) Text-to-speech
+  support [announced on November 6, 2023](https://platform.openai.com/docs/guides/text-to-speech) -
+  by [@gilcu3](https://github.com/gilcu3)
+- [x] (NEW!) Vision support [announced on November 6, 2023](https://platform.openai.com/docs/guides/vision) -
+  by [@gilcu3](https://github.com/gilcu3)
+- [x] (NEW!) GPT-4o model support [announced on May 12, 2024](https://openai.com/index/hello-gpt-4o/) -
+  by [@err09r](https://github.com/err09r)
 
 ## Prerequisites
+
 - Python 3.9+
-- A [Telegram bot](https://core.telegram.org/bots#6-botfather) and its token (see [tutorial](https://core.telegram.org/bots/tutorial#obtain-your-bot-token))
+- A [Telegram bot](https://core.telegram.org/bots#6-botfather) and its token (
+  see [tutorial](https://core.telegram.org/bots/tutorial#obtain-your-bot-token))
 - An [OpenAI](https://openai.com) account (see [configuration](#configuration) section)
 
 ## Getting started
 
 ### Configuration
-Customize the configuration by copying `.env.example` and renaming it to `.env`, then editing the required parameters as desired:
+
+Customize the configuration by copying `.env.example` and renaming it to `.env`, then editing the required parameters as
+desired:
 
 | Parameter                   | Description                                                                                                                                                                                                                   |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,9 +75,11 @@ Customize the configuration by copying `.env.example` and renaming it to `.env`,
 | `ALLOWED_TELEGRAM_USER_IDS` | A comma-separated list of Telegram user IDs that are allowed to interact with the bot (use [getidsbot](https://t.me/getidsbot) to find your user ID). **Note**: by default, *everyone* is allowed (`*`)                       |
 
 ### Optional configuration
+
 The following parameters are optional and can be set in the `.env` file:
 
 #### Budgets
+
 | Parameter             | Description                                                                                                                                                                                                                                                                                                                                                                               | Default value      |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
 | `BUDGET_PERIOD`       | Determines the time frame all budgets are applied to. Available periods: `daily` *(resets budget every day)*, `monthly` *(resets budgets on the first of each month)*, `all-time` *(never resets budget)*. See the [Budget Manual](https://github.com/n3d1117/chatgpt-telegram-bot/discussions/184) for more information                                                                  | `monthly`          |
@@ -80,9 +91,11 @@ The following parameters are optional and can be set in the `.env` file:
 | `VISION_TOKEN_PRICE`  | USD-price per 1K tokens of image interpretation. Source: https://openai.com/pricing                                                                                                                                                                                                                                                                                                       | `0.01`             |
 | `TTS_PRICES`          | A comma-separated list with prices for the tts models: `tts-1`, `tts-1-hd`. Source: https://openai.com/pricing                                                                                                                                                                                                                                                                            | `0.015,0.030`      |
 
-Check out the [Budget Manual](https://github.com/n3d1117/chatgpt-telegram-bot/discussions/184) for possible budget configurations.
+Check out the [Budget Manual](https://github.com/n3d1117/chatgpt-telegram-bot/discussions/184) for possible budget
+configurations.
 
 #### Additional optional configuration options
+
 | Parameter                           | Description                                                                                                                                                                                                                                                                             | Default value                      |
 |-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|
 | `ENABLE_QUOTING`                    | Whether to enable message quoting in private chats                                                                                                                                                                                                                                      | `true`                             |
@@ -128,6 +141,7 @@ Check out the [Budget Manual](https://github.com/n3d1117/chatgpt-telegram-bot/di
 Check out the [official API reference](https://platform.openai.com/docs/api-reference/chat) for more details.
 
 #### Functions
+
 | Parameter                         | Description                                                                                                                                      | Default value                       |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | `ENABLE_FUNCTIONS`                | Whether to use functions (aka plugins). You can read more about functions [here](https://openai.com/blog/function-calling-and-other-api-updates) | `true` (if available for the model) |
@@ -136,6 +150,7 @@ Check out the [official API reference](https://platform.openai.com/docs/api-refe
 | `SHOW_PLUGINS_USED`               | Whether to show which plugins were used for a response                                                                                           | `false`                             |
 
 #### Available plugins
+
 | Name                      | Description                                                                                                                                         | Required environment variable(s)                                     | Dependency          |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|---------------------|
 | `weather`                 | Daily weather and 7-day forecast for any location (powered by [Open-Meteo](https://open-meteo.com))                                                 | -                                                                    |                     |
@@ -155,17 +170,19 @@ Check out the [official API reference](https://platform.openai.com/docs/api-refe
 | `auto_tts`                | Text to speech using OpenAI APIs - by [@Jipok](https://github.com/Jipok)                                                                            | -                                                                    |                     |
 
 #### Environment variables
-| Variable                          | Description                                                                                                                                                                                     | Default value                       |
-|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| `WOLFRAM_APP_ID`                  | Wolfram Alpha APP ID (required only for the `wolfram` plugin, you can get one [here](https://products.wolframalpha.com/simple-api/documentation))                                               | -                                   |
-| `SPOTIFY_CLIENT_ID`               | Spotify app Client ID (required only for the `spotify` plugin, you can find it on the [dashboard](https://developer.spotify.com/dashboard/))                                                    | -                                   |
-| `SPOTIFY_CLIENT_SECRET`           | Spotify app Client Secret (required only for the `spotify` plugin, you can find it on the [dashboard](https://developer.spotify.com/dashboard/))                                                | -                                   |
-| `SPOTIFY_REDIRECT_URI`            | Spotify app Redirect URI (required only for the `spotify` plugin, you can find it on the [dashboard](https://developer.spotify.com/dashboard/))                                                 | -                                   |
-| `WORLDTIME_DEFAULT_TIMEZONE`      | Default timezone to use, i.e. `Europe/Rome` (required only for the `worldtimeapi` plugin, you can get TZ Identifiers from [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) | -                                   |
-| `DUCKDUCKGO_SAFESEARCH`           | DuckDuckGo safe search (`on`, `off` or `moderate`) (optional, applies to `ddg_web_search` and `ddg_image_search`)                                                                               | `moderate`                          |
-| `DEEPL_API_KEY`                   | DeepL API key (required for the `deepl` plugin, you can get one [here](https://www.deepl.com/pro-api?cta=header-pro-api))                                                                       | -                                   |
+
+| Variable                     | Description                                                                                                                                                                                     | Default value |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `WOLFRAM_APP_ID`             | Wolfram Alpha APP ID (required only for the `wolfram` plugin, you can get one [here](https://products.wolframalpha.com/simple-api/documentation))                                               | -             |
+| `SPOTIFY_CLIENT_ID`          | Spotify app Client ID (required only for the `spotify` plugin, you can find it on the [dashboard](https://developer.spotify.com/dashboard/))                                                    | -             |
+| `SPOTIFY_CLIENT_SECRET`      | Spotify app Client Secret (required only for the `spotify` plugin, you can find it on the [dashboard](https://developer.spotify.com/dashboard/))                                                | -             |
+| `SPOTIFY_REDIRECT_URI`       | Spotify app Redirect URI (required only for the `spotify` plugin, you can find it on the [dashboard](https://developer.spotify.com/dashboard/))                                                 | -             |
+| `WORLDTIME_DEFAULT_TIMEZONE` | Default timezone to use, i.e. `Europe/Rome` (required only for the `worldtimeapi` plugin, you can get TZ Identifiers from [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) | -             |
+| `DUCKDUCKGO_SAFESEARCH`      | DuckDuckGo safe search (`on`, `off` or `moderate`) (optional, applies to `ddg_web_search` and `ddg_image_search`)                                                                               | `moderate`    |
+| `DEEPL_API_KEY`              | DeepL API key (required for the `deepl` plugin, you can get one [here](https://www.deepl.com/pro-api?cta=header-pro-api))                                                                       | -             |
 
 ### Installing
+
 Clone the repository and navigate to the project directory:
 
 ```shell
@@ -174,12 +191,15 @@ cd chatgpt-telegram-bot
 ```
 
 #### From Source
+
 1. Create a virtual environment:
+
 ```shell
 python -m venv venv
 ```
 
 2. Activate the virtual environment:
+
 ```shell
 # For Linux or macOS:
 source venv/bin/activate
@@ -189,11 +209,13 @@ venv\Scripts\activate
 ```
 
 3. Install the dependencies using `requirements.txt` file:
+
 ```shell
 pip install -r requirements.txt
 ```
 
 4. Use the following command to start the bot:
+
 ```
 python bot/main.py
 ```
@@ -201,37 +223,18 @@ python bot/main.py
 #### Using Docker Compose
 
 Run the following command to build and run the Docker image:
+
 ```shell
 docker compose up
 ```
 
-#### Ready-to-use Docker images
-You can also use the Docker image from [Docker Hub](https://hub.docker.com/r/n3d1117/chatgpt-telegram-bot):
-```shell
-docker pull n3d1117/chatgpt-telegram-bot:latest
-docker run -it --env-file .env n3d1117/chatgpt-telegram-bot
-```
-
-or using the [GitHub Container Registry](https://github.com/n3d1117/chatgpt-telegram-bot/pkgs/container/chatgpt-telegram-bot/):
-
-```shell
-docker pull ghcr.io/n3d1117/chatgpt-telegram-bot:latest
-docker run -it --env-file .env ghcr.io/n3d1117/chatgpt-telegram-bot
-```
-
-#### Docker manual build
-```shell
-docker build -t chatgpt-telegram-bot .
-docker run -it --env-file .env chatgpt-telegram-bot
-```
-
 ## Credits
+
 - [ChatGPT](https://chat.openai.com/chat) from [OpenAI](https://openai.com)
 - [python-telegram-bot](https://python-telegram-bot.org)
 - [jiaaro/pydub](https://github.com/jiaaro/pydub)
 
-## Disclaimer
-This is a personal project and is not affiliated with OpenAI in any way.
-
 ## License
-This project is released under the terms of the GPL 2.0 license. For more information, see the [LICENSE](LICENSE) file included in the repository.
+
+This project is released under the terms of the GPL 2.0 license. For more information, see the [LICENSE](LICENSE) file
+included in the repository.
