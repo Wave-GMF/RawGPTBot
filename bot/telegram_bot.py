@@ -68,13 +68,9 @@ class ChatGPTTelegramBot:
         commands_description = [f'/{command.command} - {command.description}' for command in commands]
         bot_language = self.config['bot_language']
         help_text = (
-                localized_text('help_text', bot_language)[0] +
+                localized_text('help_text', bot_language) +
                 '\n\n' +
-                '\n'.join(commands_description) +
-                '\n\n' +
-                localized_text('help_text', bot_language)[1] +
-                '\n\n' +
-                localized_text('help_text', bot_language)[2]
+                '\n'.join(commands_description)
         )
         await update.message.reply_text(help_text, disable_web_page_preview=True)
 
