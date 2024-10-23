@@ -462,7 +462,7 @@ class ChatGPTTelegramBot:
                     logging.info('Vision coming from group chat with wrong keyword, ignoring...')
                     return
 
-                prompt = prompt[len(trigger_keyword):]
+                prompt = None
 
         image = update.message.effective_attachment[-1]
         
