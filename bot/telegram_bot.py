@@ -452,17 +452,7 @@ class ChatGPTTelegramBot:
         prompt = update.message.caption
 
         if is_group_chat(update):
-            if self.config['ignore_group_vision']:
-                logging.info('Vision coming from group chat, ignoring...')
-                return
-            else:
-                trigger_keyword = self.config['group_trigger_keyword']
-                if (prompt is None and trigger_keyword != '') or \
-                   (prompt is not None and not prompt.lower().startswith(trigger_keyword.lower())):
-                    logging.info('Vision coming from group chat with wrong keyword, ignoring...')
-                    return
-
-                prompt = None
+            prompt = None
 
         image = update.message.effective_attachment[-1]
         
