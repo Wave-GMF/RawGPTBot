@@ -9,7 +9,7 @@
     "chat_description": "Chat with the bot!",
     "disallowed": "Sorry, you are not allowed to use this bot.",
     "budget_limit": "Sorry, you have reached your usage limit.",
-    "help_text": "I can assist with formatting Chinese bank details. Please provide the complete information you'd like me to format.",
+    "help_text": "I can assist with formatting bank details. Please provide the complete information you'd like me to format.",
     "stats_conversation": [
       "Current conversation",
       "chat messages in history",
