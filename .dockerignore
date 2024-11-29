@@ -1,6 +1,11 @@
-.dockerignore
+.git
 .github
 .gitignore
-docker-compose.yml
+
+.dockerignore
+compose.yaml
 Dockerfile
-venv
+
+.venv
+
+.env
