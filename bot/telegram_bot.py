@@ -22,6 +22,7 @@ from utils import is_group_chat, get_thread_id, message_text, wrap_with_indicato
     cleanup_intermediate_files
 from openai_helper import OpenAIHelper, localized_text
 from usage_tracker import UsageTracker
+from plugins.swift.parser import parse_swift
 
 
 class ChatGPTTelegramBot:
@@ -42,7 +43,8 @@ class ChatGPTTelegramBot:
             BotCommand(command='help', description=localized_text('help_description', bot_language)),
             BotCommand(command='reset', description=localized_text('reset_description', bot_language)),
             BotCommand(command='stats', description=localized_text('stats_description', bot_language)),
-            BotCommand(command='resend', description=localized_text('resend_description', bot_language))
+            BotCommand(command='resend', description=localized_text('resend_description', bot_language)),
+            BotCommand(command='chkswft', description=localized_text('check_swift_description', bot_language))
         ]
         # If imaging is enabled, add the "image" command to the list
         if self.config.get('enable_image_generation', False):
@@ -201,6 +203,21 @@ class ChatGPTTelegramBot:
             message.text = self.last_message.pop(chat_id)
 
         await self.prompt(update=update, context=context)
+
+    async def check_swift(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """
+        parse data by swift code
+        """
+        
+        reply_to = update['message']['reply_to_message']
+        if reply_to == None:
+            return
+
+        swift_code = reply_to['text']
+        result = parse_swift(swift_code)
+
+        await update.effective_message.reply_text(result)
+        return 
 
     async def reset(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """
@@ -1048,6 +1065,7 @@ class ChatGPTTelegramBot:
             .concurrent_updates(True) \
             .build()
 
+        application.add_handler(CommandHandler('chkswft', self.check_swift))
         application.add_handler(CommandHandler('reset', self.reset))
         application.add_handler(CommandHandler('help', self.help))
         application.add_handler(CommandHandler('image', self.image))
